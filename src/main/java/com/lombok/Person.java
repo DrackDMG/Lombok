@@ -1,13 +1,13 @@
 package com.lombok;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
 @Setter // por defecto son públicos
 @Getter// (value = AccessLevel.PROTECTED) // se les puede asignar un nivel de acceso
+@AllArgsConstructor // crea un constructor con argumentos //(staticName = "of") //para crear un método estático que devuelva una instancia de la clase con los atributos requeridos
+@NoArgsConstructor // crea un constructor vacío //(access = AccessLevel.PUBLIC) // se les puede asignar un nivel de acceso
 public class Person {
 
     //@Setter // se pueden asignar a nivel de atributo
@@ -22,4 +22,19 @@ public class Person {
     private String zipCode;
     private LocalDate birthDate;
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", birthDate=" + birthDate +
+                '}';
+    }
 }
