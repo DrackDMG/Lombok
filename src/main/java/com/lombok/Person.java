@@ -10,6 +10,9 @@ import java.time.LocalDate;
 @AllArgsConstructor // crea un constructor con argumentos //(staticName = "of") //para crear un método estático que devuelva una instancia de la clase con los atributos requeridos
 @NoArgsConstructor // crea un constructor vacío //(access = AccessLevel.PUBLIC) // se les puede asignar un nivel de acceso
 @FieldDefaults(level = AccessLevel.PRIVATE /*makeFinal = true // hace que sean Final*/) // se les puede asignar un nivel de acceso a los atributos
+//@ToString(exclude = {"address", "city", "state", "country", "zipCode"})//se crea el toString // se puden excluir atributos
+//@ToString(includeFieldNames = false) // muestra solo los valores de los atributos
+@ToString(of = {"id", "name", "email", "phone", "birthDate"}) // muestra solo los valores de los atributos
 public class Person {
 
     //@Setter // se pueden asignar a nivel de atributo
@@ -25,19 +28,4 @@ public class Person {
      String zipCode;
      LocalDate birthDate;
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", country='" + country + '\'' +
-                ", zipCode='" + zipCode + '\'' +
-                ", birthDate=" + birthDate +
-                '}';
-    }
 }
