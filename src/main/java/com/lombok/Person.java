@@ -13,6 +13,8 @@ import java.time.LocalDate;
 //@ToString(exclude = {"address", "city", "state", "country", "zipCode"})//se crea el toString // se puden excluir atributos
 //@ToString(includeFieldNames = false) // muestra solo los valores de los atributos
 @ToString(of = {"id", "name", "email", "phone", "birthDate"}) // muestra solo los valores de los atributos
+//@EqualsAndHashCode(/* exclude = {"name"} nos excluye los paraentros que queramos*/ /*of = {"id", "name", "email", "phone", "birthDate"} nos ibluye los parametros que queremos*/) // se les puede asignar los atributos a comparar// no crea el equeals y el hashcode
+@EqualsAndHashCode(doNotUseGetters = true) // no usa los getters perono es muy comun
 public class Person {
 
     //@Setter // se pueden asignar a nivel de atributo
