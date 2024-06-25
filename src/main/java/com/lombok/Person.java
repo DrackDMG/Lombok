@@ -5,17 +5,14 @@ import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 
-@Data // genera los métodos getter, setter, equals, hashcode, toString
-@AllArgsConstructor // genera un constructor con todos los atributos
-@NoArgsConstructor // genera un constructor vacío
-@FieldDefaults(level = AccessLevel.PRIVATE) // se puede asignar a nivel de clase porque el @Data no lo asigna
-@Builder //(builderMethodName = "create", builderClassName = "personConstructor") // genera un método estático builder y builderMethodName es el nombre del método
-// builderClassName es el nombre de la clase que se genera // normalmente se usa solo builder
+@Value // inmutable y nos define los métodos getter y los atributos como privados y final
+@RequiredArgsConstructor // genera un constructor con los atributos marcados con @NonNull y los atributos finales
 public class Person {
 
     //@Setter // se pueden asignar a nivel de atributo
      Long id;
      //public String name; // si se quiere que sea publico se le puede agregar el modificador de acceso
+ @NonNull
      String name;
      String email;
      String phone;
