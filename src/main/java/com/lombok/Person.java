@@ -9,6 +9,8 @@ import java.time.LocalDate;
 @AllArgsConstructor // genera un constructor con todos los atributos
 @NoArgsConstructor // genera un constructor vacío
 @FieldDefaults(level = AccessLevel.PRIVATE) // se puede asignar a nivel de clase porque el @Data no lo asigna
+@Builder //(builderMethodName = "create", builderClassName = "personConstructor") // genera un método estático builder y builderMethodName es el nombre del método
+// builderClassName es el nombre de la clase que se genera // normalmente se usa solo builder
 public class Person {
 
     //@Setter // se pueden asignar a nivel de atributo

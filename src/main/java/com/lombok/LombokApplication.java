@@ -33,6 +33,14 @@ public class LombokApplication {
 
 			System.out.println(person);
 
+			//si se usa el método estático builder
+			Person person2 = Person.create()
+					.id(1L)
+					.name("John Doe")
+					.build();
+
+			System.out.println(person2);
+
 		};
 
 	}
